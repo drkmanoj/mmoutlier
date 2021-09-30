@@ -4,7 +4,6 @@
 mmoutlier<-function(x)
 {
   par(mfrow=c(1,2))
-x<-rnorm(1500)
 xsort<-sort(x)
 y<-boxplot(x)$out
 xy<-x[which(x %in% y)]
