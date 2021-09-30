@@ -1,0 +1,30 @@
+mmoutlier<-function()
+{
+x<-c(1,2,3,4,5,25,40,65,6,7,8,9,98,8,79)
+xsort<-sort(x)
+y<-boxplot(x)$out
+xy<-x[which(x %in% y)]
+xy
+
+xysort<-sort(xy)
+
+l<-length(xysort)
+#len<-1
+for(k in seq_along(xysort))
+{
+for(i in seq_along(x))
+{
+
+  if(xysort[k]==x[i])
+  {
+
+  x[i]<-(xsort[length(x)-length(xysort)-l+1])-x[(l)]
+ # len<-len-1
+  l<-l-1
+  }
+}
+}
+
+print(x)
+}
+
