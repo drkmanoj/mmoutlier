@@ -7,7 +7,7 @@ mmoutlier<-function(x)
 xsort<-sort(x)
 y<-boxplot(x)$out
 xy<-x[which(x %in% y)]
-xy
+View(xy)
 
 xysort<-sort(xy)
 
